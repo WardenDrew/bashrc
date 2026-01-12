@@ -14,7 +14,7 @@ esac
 # Housekeeping Setup for Bash #
 # # # # # # # # # # # # # # # #
 
-printf "\e[m\n\e[90m#\e[m now \e[90m$(date -u +"%Y-%m-%dT%H:%M:%SZ") UTC";
+printf "\e[m\n\e[90m#$(date -u +"%Y-%m-%dT%H:%M:%SZ") UTC";
 printf "\e[m\n\e[90m#\e[m Scanning Versions, wait a moment...\e[m\n";
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -93,7 +93,7 @@ function __git_status {
 		return;
 	fi
 
-	printf "\e[m\n\e[90m#\e[m git ";
+	printf "\e[m\n\e[90m#\e[m git\e[90m branch ";
 	printf "\e[1;35m$(__git_ps1 %s)\e[m";
 
 	untracked=$(git status --porcelain | grep -c '^??');
